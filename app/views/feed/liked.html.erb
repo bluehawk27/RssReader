@@ -1,0 +1,6 @@
+
+<ul>
+  <% @feed.each do |liked| %>
+    <li><%= link_to h(liked.title), liked.url %></li>
+  <% end %>
+</ul>

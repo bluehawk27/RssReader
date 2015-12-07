@@ -1,0 +1,12 @@
+
+<%=link_to "My Liked Articles", liked_feed_index_path %>
+
+<ul>
+  <% @feed.each do |feed| %>
+    <li><%= link_to h(feed.title), feed.url %></li>
+    <p><%= feed.published_at %> </p>
+    <%= link_to like_feed_path(feed), method: :put do %>
+      <i class="fa fa-heart-o"></i>
+    <% end %>
+  <% end %>
+</ul>
