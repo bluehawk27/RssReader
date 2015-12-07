@@ -1,17 +1,16 @@
 <div id="background">
   <header class="cf">
-    <% if user_signed_in? %>
-      <%= link_to "Reddit Reader", feed_index_path, id: "logo" %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-
-    <% end %>
-
-
+    <%= link_to "Reddit Reader", feed_index_path, id: "logo" %>
   </header>
-  <div class="wrapper-skinny">
-    <h1><%= link_to "RSS Reader", feed_index_path %><i class="fa fa-rss fa-2x"></i></h1>
-    <%=link_to "Join Us!", new_user_registration_path, class: "button button-highlight" %>
-    <%= link_to "Welcome Back!", new_user_session_path, class: "button button-white" %>
-  </div>
+
+
+    <div class="wrapper-skinny">
+      <h1><%= link_to "RSS Reader", feed_index_path %><i class="fa fa-rss fa-2x"></i></h1>
+    <% if !user_signed_in? %>
+      <%=link_to "Join Us!", new_user_registration_path, class: "button button-highlight" %>
+      <%= link_to "Welcome Back!", new_user_session_path, class: "button button-white" %>
+    <% else %>
+      <%= link_to "Check out the Feed!",feed_index_path, class: "button button-highlight" %>
+    <% end %>
+    </div>
 </div>

@@ -1,6 +1,10 @@
 
-<ul>
-  <% @feed.each do |liked| %>
-    <li><%= link_to h(liked.title), liked.url %></li>
-  <% end %>
-</ul>
+<h1 class="title">Liked Articles</h1>
+<div class="wrapper" id="feed">
+  <ul>
+    <% @feed.each do |liked| %>
+      <li><%= link_to h(liked.title), liked.url %></li>
+      <hr>
+    <% end %>
+  </ul>
+</div>

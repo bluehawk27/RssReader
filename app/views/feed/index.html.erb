@@ -1,12 +1,15 @@
 
-<%=link_to "My Liked Articles", liked_feed_index_path %>
 
-<ul>
-  <% @feed.each do |feed| %>
-    <li><%= link_to h(feed.title), feed.url %></li>
-    <p><%= feed.published_at %> </p>
-    <%= link_to like_feed_path(feed), method: :put do %>
-      <i class="fa fa-heart-o"></i>
+<h1 class="title">Reddit Feed</h1>
+<div class="wrapper" id="feed">
+  <ul>
+    <% @feed.each do |feed| %>
+      <li><%= link_to h(feed.title), feed.url %> |
+      <%= link_to like_feed_path(feed), method: :put do %>
+        <i class="fa fa-heart-o"></i>
+      <% end %></li>
+      <p>Published:<%= feed.published_at.strftime("%x, %X") %> </p>
+      <hr>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>

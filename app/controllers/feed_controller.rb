@@ -8,7 +8,7 @@ class FeedController < ApplicationController
 
   def like
     @feed.liked_by current_user
-    redirect_to :back
+    redirect_to :back, notice: "Article liked"
   end
 
   def liked

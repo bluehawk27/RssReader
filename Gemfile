@@ -13,6 +13,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'feedjira'
 gem 'font-awesome-sass'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 
 group :development, :test do

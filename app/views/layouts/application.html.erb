@@ -8,9 +8,17 @@
 </head>
 <body>
   <% if alert %>
-    <p class="notice"><%= notice %></p>
+    <div id="alert-wrapper">
+      <p class="alert"><%= alert %></p>
+    </div>
   <% elsif notice %>
-    <p class="alert"><%= alert %></p>
+    <div id="notice-wrapper">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% end %>
+
+  <% unless current_page?(root_path)%>
+    <%= render 'layouts/header'; %>
   <% end %>
 
 <%= yield %>
